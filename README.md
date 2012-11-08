@@ -11,20 +11,20 @@ Documentation
 Use doc-order by initializing it on the window and passing in an array of queries denoting window widths and parent - child mappings
 
 	$(window).docorder({
-		'queries': [
-				{
-					'max': 480,
-					'min': 320,
-					'map': [
-								{
-									'parent': 'div#parent',
-									'child': 'div#child',
-									'index': 0
-								}
-						]
-				}
-			]
-		});
+	  'queries': [
+	    {
+		  'max': 480,
+		  'min': 320,
+		  'map': [
+		    {
+			  'parent': 'div#parent',
+			  'child': 'div#child',
+			  'index': 0
+			}
+	      ]
+	    }
+	   ]
+	});
 		
 The <code>max</code> and <code>min</code> parameters indicate the range of viewport widths
 for which this query should apply. <code>index</code> indicates the position the
