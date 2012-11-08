@@ -8,7 +8,7 @@ CSS media queries when CSS alone does not yield the desired effect.
 Documentation
 -------------
 
-Use doc-order by initializing it on the window and passing in an array of queries parent - child mappings
+Use doc-order by initializing it on the window and passing in an array of queries denoting window widths and parent - child mappings
 
 	$(window).docorder({
 		'queries': [
@@ -28,7 +28,7 @@ Use doc-order by initializing it on the window and passing in an array of querie
 		
 The <code>max</code> and <code>min</code> parameters indicate the range of viewport widths
 for which this query should apply. <code>index</code> indicates the position the
-child should occupy amongst the parent's other children. A value of zero causes the child
+child should occupy among the parent's other children. A value of zero causes the child
 to be prepended to the parent, while omitting the parameter results in the child being appended.
 
 In addition to <code>queries</code>, doc-order also accepts a <code>latency</code> parameter (given in milliseconds) 
