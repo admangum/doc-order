@@ -39,16 +39,23 @@
 			map = this;
 			map.parent 	= map.parent instanceof jQuery ? map.parent : $(map.parent);
 			map.child 	= map.child instanceof jQuery ? map.child : $(map.child);
-			sibs 		= map.parent.children();
-			if( !map.parent || !map.child )
+			
+			if( !map.parent.length || !map.child.length || map.child.parent()[0] == map.parent[0] )
 				return;
+			
 			if( map.index === 0 ){
 				map.child.prependTo( map.parent );
-			}else if( typeof map.index == 'number' && map.index < sibs.length ){
-				sibs.eq(map.index).before(map.child);
-			}else{
-				map.child.appendTo( map.parent );
+				return true;
 			}
+			
+			sibs = map.parent.children();
+			if( typeof map.index == 'number' && map.index < sibs.length ){
+				sibs.eq(map.index).before(map.child);
+				return true;
+			}
+			
+			map.child.appendTo( map.parent );
+			
 		});
 	},
 	DocOrder = function(element, options){
